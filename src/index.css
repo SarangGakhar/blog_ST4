@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nic{
+  background-color:rgb(111, 115, 105);
+  color:black;
+  border-radius: 5px;
+  padding:5px;
+ 
+}
+
+.total_cards{
+  display:flex;
+  flex-wrap: wrap;
+  /* align-content: space-between; */
+ 
+  align-items: center;
+  margin:10px;
+}
+
+.bi{
+  margin: 5px;
+}
+

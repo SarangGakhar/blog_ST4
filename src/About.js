@@ -9,7 +9,7 @@ export default function About(){
         
         <div>
 
-            <p>this is About us</p>
+            <p>Hi my name is sarang </p>
           
         </div>
 

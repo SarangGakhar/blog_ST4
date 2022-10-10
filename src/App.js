@@ -6,6 +6,7 @@ import About from "./About";
 import NavBar from "./NavBar";
 import Contact from "./Contact";
 import NotFound from "./NotFound";
+import './index.css'
 // import   {BrowserRouter} from "react-router-dom";
 
 
