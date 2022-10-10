@@ -9,8 +9,8 @@ export default function About(){
     return (
         <>
         
-        <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="https://raw.githubusercontent.com/SarangGakhar/image-gallery/master/sarang.jpg" />
+        <Card style={{marginLeft:'25vw', maxWidth: '50vw' ,alignSelf:'center',borderRadius:'50px' }}>
+      <Card.Img style={{borderRadius:'20px'}} variant="top" src="https://raw.githubusercontent.com/SarangGakhar/image-gallery/master/sarang.jpg" />
       <Card.Body>
         <Card.Title>Sarang</Card.Title>
         <Card.Text>
