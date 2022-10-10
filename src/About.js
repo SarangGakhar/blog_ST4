@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom"
 import { useParams } from "react-router-dom"
-export default function BookList(){
+export default function About(){
     
    
     return (
@@ -9,7 +9,7 @@ export default function BookList(){
         
         <div>
 
-            <p>this is booklist page</p>
+            <p>this is About us</p>
           
         </div>
 

@@ -16,8 +16,8 @@ export default function NavBar() {
             <Navbar.Collapse id="navbarScroll">
                 <Nav>
                     <NavLink  eventKey="1" as={Link} to="/">Home</NavLink>
-                    <NavLink  eventKey="2" as={Link} to="BookList">BookList</NavLink>
-                    <NavLink  eventKey="3" as={Link} to="Login">Login</NavLink>
+                    <NavLink  eventKey="2" as={Link} to="About">About</NavLink>
+                    <NavLink  eventKey="3" as={Link} to="Contact">Contact</NavLink>
                 </Nav>
             </Navbar.Collapse>     
         </Navbar>

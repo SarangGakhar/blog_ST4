@@ -2,9 +2,9 @@ import React from "react";
 import {Link,Route,Routes,Switch} from "react-router-dom";
 import './App.css';
 import  Home  from "./Home";
-import BookList from "./BookList";
+import About from "./About";
 import NavBar from "./NavBar";
-import Login from "./Login";
+import Contact from "./Contact";
 import NotFound from "./NotFound";
 // import   {BrowserRouter} from "react-router-dom";
 
@@ -21,8 +21,8 @@ function App() {
   <Route path="/" element={<NavBar />} >
 
     <Route index element={<Home />} />
-    <Route path="/BookList" element={<BookList />} />
-    <Route path="/Login" element={<Login />} />
+    <Route path="About" element={<About />} />
+    <Route path="Contact" element={<Contact />} />
     <Route path="*" element={<NotFound />} /> 
 
 </Route>

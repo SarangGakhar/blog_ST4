@@ -1,10 +1,10 @@
 import React from 'react'
 import Nav from "./NavBar"
-export default function  Login() {
+export default function  Contact() {
   return (
     <>
     {/* <Nav/> */}
-    <div> this is Login page</div>
+    <div> this is contact page</div>
     </>
   )
 }
