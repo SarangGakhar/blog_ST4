@@ -7,6 +7,7 @@ import NavBar from "./NavBar";
 import Contact from "./Contact";
 import NotFound from "./NotFound";
 import './index.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 // import   {BrowserRouter} from "react-router-dom";
 
 

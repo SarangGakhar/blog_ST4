@@ -9,6 +9,19 @@ import Footer from "./Footer.js";
 import BlogCard from './BlogCard.js' 
  export default function Home(){
 
+
+  const [starWarsData, setStarWarsData] = React.useState({})
+  const [count, setCount] = React.useState(1)
+
+  React.useEffect(function() {
+    console.log("Effect ran")
+    let str="https://swapi.dev/api/people/";
+    let rv=`${count}`;
+    fetch(str+ rv)
+        .then(res => res.json())
+        .then(data => setStarWarsData(data))
+}, [count])
+
     
     return (
         <>
@@ -34,11 +47,21 @@ import BlogCard from './BlogCard.js'
     </Row>
      */}
 
+{/* <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+            <h2>The count is {count}</h2>
+            <button onClick={() => setCount(prevCount => prevCount + 1)}>Add</button>
+            <button onClick={() => {return count>1 && setCount(prevCount => prevCount -1)}}>subtract</button>
+            
+        </div> */}
+
+
+        
 
      <div className="total_cards">
 
     
-
+{/* 
      <div className="bi">
     <BlogCard
         
@@ -133,22 +156,44 @@ import BlogCard from './BlogCard.js'
         img="https://misstourist.com/wp-content/uploads/2020/07/Self-Drive-Darwin-to-Alice-Springs-660x467@2x.jpg"
         
     />
-    </div>
+    </div> */}
 
     <div className="bi">
     <BlogCard
-        
-        header="recent post"
-        title="9 Best Things to Do on the Sunshine Coast (Including Some Kids-Friendly and Free Ones)"
-        cardText=""
-        img="https://misstourist.com/wp-content/uploads/2020/07/Things-to-do-on-the-Sunshine-coast.jpg"
+        {...starWarsData}
+
+        // header="recent post"
+        // title="9 Best Things to Do on the Sunshine Coast (Including Some Kids-Friendly and Free Ones)"
+        // cardText=""
+        // img="https://misstourist.com/wp-content/uploads/2020/07/Things-to-do-on-the-Sunshine-coast.jpg"
     />
+
+    
     </div>
+
+    <div class="next_prev">
+
+    <div class="prev bn" >
+    <button onClick={() => {return count>1 && setCount(prevCount => prevCount -1)}} >Prev</button>
+
+    </div>
+
+    <div class="next bn">
+
+     <button onClick={() => setCount(prevCount => prevCount + 1)}  >Next</button>
+
+    </div>
+
+            
    
      </div>
 
+    </div>
+
+    
 
 
+    
 
 
 
