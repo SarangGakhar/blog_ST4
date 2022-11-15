@@ -1,176 +1,82 @@
 import React from "react"
+import { Col } from "react-bootstrap";
 //import {Link} from "react-router-dom"
 //import { useParams } from "react-router-dom"
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Nav from "./NavBar";
-import Footer from "./Footer.js";
-import BlogCard from './BlogCard.js' 
+// import Card from 'react-bootstrap/Card';
+// import Col from 'react-bootstrap/Col';
+// import Row from 'react-bootstrap/Row';
+//import Nav from "./NavBar";
+//import Footer from "./Footer.js";
+import BlogCard from './BlogCard.js'
+import Films from "./Films"; 
  export default function Home(){
 
 
   const [starWarsData, setStarWarsData] = React.useState({})
   const [count, setCount] = React.useState(1)
 
+  
+    
+
   React.useEffect(function() {
     console.log("Effect ran")
-    let str="https://swapi.dev/api/people/";
+    let str="https://swapi.py4e.com/api/people/";
     let rv=`${count}`;
     fetch(str+ rv)
         .then(res => res.json())
         .then(data => setStarWarsData(data))
+
+    
 }, [count])
+
+
+
+
+
+
+
+
+let arr=starWarsData.films.map(val=>
+(
+    <Films
+   links={val}
+  //  num={count}
+
+    />
+
+  )
+)
+
+
+
+  
+
 
     
     return (
         <>
-        
 
-     {/*   
-        <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 8 }).map((_, idx) => (
-        <Col>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
-     */}
-
-{/* <div>
-            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
-            <h2>The count is {count}</h2>
-            <button onClick={() => setCount(prevCount => prevCount + 1)}>Add</button>
-            <button onClick={() => {return count>1 && setCount(prevCount => prevCount -1)}}>subtract</button>
-            
-        </div> */}
-
-
-        
 
      <div className="total_cards">
-
-    
-{/* 
-     <div className="bi">
-    <BlogCard
-        
-        header="recent post"
-        title="10 Things to Do in Port Douglas (+2 Incredible Day-trips to World Heritage Sites!)"
-        cardText=""
-        img="https://misstourist.com/wp-content/uploads/2020/06/Port-Douglas-660x440@2x.jpg"
-    />
-    </div>
-
-    <div className="bi">
-    <BlogCard
-        
-        header="recent post"
-        title="9 Best Things to Do on the Sunshine Coast (Including Some Kids-Friendly and Free Ones)"
-        cardText=""
-        img="https://misstourist.com/wp-content/uploads/2020/07/Things-to-do-on-the-Sunshine-coast.jpg"
-    />
-    </div>
-
-    <div className="bi">
-    <BlogCard
-        
-        header="recent post"
-        title="10 Things To Do In Kakadu National Park, Northern Territory (With or Without a 4WD)
-        "
-        cardText=""
-        img="https://misstourist.com/wp-content/uploads/2020/07/Sunset-at-Ubirr-Things-to-do-in-Kakadu-660x440@2x.jpg"
-    />
-    </div>
-
-    <div className="bi">
-    <BlogCard
-        
-        header="recent post"
-        title="5 Best Day Trips from Darwin (Self Drive and Tours!)"
-        cardText=""
-        img=" https://misstourist.com/wp-content/uploads/2020/07/4WD-Safaris-Day-Trips-from-Darwin-660x440@2x.jpg"
-    />
-    </div>
-
-    <div className="bi">
-    <BlogCard
-        
-        header="recent post"
-        title="Darwin To Alice Springs (+ Uluru): A Detailed 6-Day Road Trip Itinerary!"
-        cardText=""
-        img="https://misstourist.com/wp-content/uploads/2020/07/Self-Drive-Darwin-to-Alice-Springs-660x467@2x.jpg"
-        
-    />
-    </div>
-
-    <div className="bi">
-    <BlogCard
-        
-        header="recent post"
-        title="9 Best Things to Do on the Sunshine Coast (Including Some Kids-Friendly and Free Ones)"
-        cardText=""
-        img="https://misstourist.com/wp-content/uploads/2020/07/Things-to-do-on-the-Sunshine-coast.jpg"
-    />
-    </div>
-
-
-    <div className="bi">
-    <BlogCard
-        
-        header="recent post"
-        title="Darwin To Alice Springs (+ Uluru): A Detailed 6-Day Road Trip Itinerary!"
-        cardText=""
-        img="https://misstourist.com/wp-content/uploads/2020/07/Self-Drive-Darwin-to-Alice-Springs-660x467@2x.jpg"
-        
-    />
-    </div>
-
-
-    <div className="bi">
-    <BlogCard
-        
-        header="recent post"
-        title="10 Things to Do in Port Douglas (+2 Incredible Day-trips to World Heritage Sites!)"
-        cardText=""
-        img="https://misstourist.com/wp-content/uploads/2020/06/Port-Douglas-660x440@2x.jpg"
-    />
-    </div>
-
-    <div className="bi">
-    <BlogCard
-        
-        header="recent post"
-        title="Darwin To Alice Springs (+ Uluru): A Detailed 6-Day Road Trip Itinerary!"
-        cardText=""
-        img="https://misstourist.com/wp-content/uploads/2020/07/Self-Drive-Darwin-to-Alice-Springs-660x467@2x.jpg"
-        
-    />
-    </div> */}
 
     <div className="bi">
     <BlogCard
         {...starWarsData}
 
-        // header="recent post"
-        // title="9 Best Things to Do on the Sunshine Coast (Including Some Kids-Friendly and Free Ones)"
-        // cardText=""
-        // img="https://misstourist.com/wp-content/uploads/2020/07/Things-to-do-on-the-Sunshine-coast.jpg"
     />
-
-    
+ 
     </div>
 
+    <div class="title" > FILMS</div>
+    {/* <img src="film.png" alt="" class="starwars_image hc"></img> */}
+
+
+   <div>
+    {arr}
+    </div> 
+
+
+  
     <div class="next_prev">
 
     <div class="prev bn" >
@@ -189,6 +95,8 @@ import BlogCard from './BlogCard.js'
      </div>
 
     </div>
+
+    
 
     
 

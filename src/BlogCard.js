@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
+
 export default function BlogCard(props) {
   return (
    
@@ -12,7 +13,7 @@ export default function BlogCard(props) {
    
 
       <div class="home_card">
-        
+        {/* <div class=" title hc">STAR WARS</div> */}
         <img src="starwars_image.jpg" alt="" class="starwars_image hc"></img>
       
         
